@@ -1,0 +1,41 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "GET",
+                "url": "/request",
+                "headers":{
+                    "Accept": {
+                        "equalTo":"application/json;charset=utf-8"
+                    }
+                }
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "message": "Hello World"
+                },
+                "headers": {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/isciopex2/auth/token"
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "access-token.json",
+                "transformerParameters": {
+                    "disableBodyFileTemplating": true
+                },
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            }
+        
+        }
+    ]
+}

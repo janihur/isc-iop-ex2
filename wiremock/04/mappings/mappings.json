@@ -1,0 +1,52 @@
+{
+    "mappings": [
+        {
+            "scenarioName": "WireMock Corrupted Responses",
+            "requiredScenarioState": "Started",
+            "newScenarioState": "MALFORMED_RESPONSE_CHUNK",
+            "request": {
+                "method": "POST",
+                "url": "/isciopex2/auth/token"
+            },
+            "response": {
+                "fault": "EMPTY_RESPONSE"
+            }
+        },
+        {
+            "scenarioName": "WireMock Corrupted Responses",
+            "requiredScenarioState": "MALFORMED_RESPONSE_CHUNK",
+            "newScenarioState": "RANDOM_DATA_THEN_CLOSE",
+            "request": {
+                "method": "POST",
+                "url": "/isciopex2/auth/token"
+            },
+            "response": {
+                "fault": "MALFORMED_RESPONSE_CHUNK"
+            }
+        },
+        {
+            "scenarioName": "WireMock Corrupted Responses",
+            "requiredScenarioState": "RANDOM_DATA_THEN_CLOSE",
+            "newScenarioState": "CONNECTION_RESET_BY_PEER",
+            "request": {
+                "method": "POST",
+                "url": "/isciopex2/auth/token"
+            },
+            "response": {
+                "fault": "RANDOM_DATA_THEN_CLOSE"
+            }
+        },
+        {
+            "scenarioName": "WireMock Corrupted Responses",
+            "requiredScenarioState": "CONNECTION_RESET_BY_PEER",
+            "newScenarioState": "Ended",
+            "request": {
+                "method": "POST",
+                "url": "/isciopex2/auth/token"
+            },
+            "response": {
+                "fault": "CONNECTION_RESET_BY_PEER"
+            }
+        }
+    ]
+}

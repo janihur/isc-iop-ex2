@@ -1,0 +1,7 @@
+{
+    "access_token": "ewogICJhbGciOiAiUlMyNTYiLAogICJ0eXAiOiAiSldUIgp9.ewogICJzdWIiOiAiamFuaWh1ciIsCiAgImlhdCI6IDE3MzgzMzU1NDYsCiAgImV4cCI6IDE3MzgzMzkxNDYsCiAgImp0aSI6ICJiYzc2Njc0OS0wYjI5LTRkNDMtYjliYi1hMTNhMWQwYzRkOGEiLAogICJjbGllbnRfaWQiOiAiaXNjaW9wZXgyLWNsaWVudC1pZCIKfQ.K2kBxPh4uXfIYo-36B2Q6WeE6LzgQMnvtQcVUgjfWhENUdDj8vNeVy3BukoAC4KPQ8ZFzMwOOWtGLlKhq1MdHRhUf8jsFd3hbZLZRXL3R0EkvFKGhKABDThyJfm4dofrLvhJaQ42tYeyhjB-c6POJPnXMRT1qaq2a-GEAmxK0DqFWNDsfSRc-JXy2Ekxr92FAzDMmHb--0ODixO9NwSS6QSiyb36Mj9z6nW4B7aUKzr6nRN09vXDA7z1R4W71tMKkd4dQOjWuF7D-h1UNK2JMJ2f1PXBzLobfjlntBBMns_BtoRtHUPzLPvMqv24LLR02X3jw8-aWRW0VCD8ywk6Lg",
+    "token_type": "bearer",
+    "expires_in": 0,
+    "jti": "bc766749-0b29-4d43-b9bb-a13a1d0c4d8a",
+    "scope": "isciopex2-scope"
+}

@@ -1,0 +1,91 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "GET",
+                "url": "/request",
+                "headers":{
+                    "Accept": {
+                        "equalTo":"application/json;charset=utf-8"
+                    }
+                }
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "message": "Hello World"
+                },
+                "headers": {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            }
+        },
+        {
+            "scenarioName": "OAuth Delay Simulations",
+            "requiredScenarioState": "Started",
+            "newScenarioState": "fixedDelayMilliseconds",
+            "request": {
+                "method": "POST",
+                "url": "/isciopex2/auth/token"
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "access-token.json",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "transformerParameters": {
+                    "disableBodyFileTemplating": true
+                },
+                "delayDistribution": {
+                    "type": "uniform",
+                    "lower": 5000,
+                    "upper": 7000
+                }
+            }
+        },
+        {
+            "scenarioName": "OAuth Delay Simulations",
+            "requiredScenarioState": "fixedDelayMilliseconds",
+            "newScenarioState": "chunkedDribbleDelay",
+            "request": {
+                "method": "POST",
+                "url": "/isciopex2/auth/token"
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "access-token.json",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "transformerParameters": {
+                    "disableBodyFileTemplating": true
+                },
+                "fixedDelayMilliseconds": 10000
+            }
+        },
+        {
+            "scenarioName": "OAuth Delay Simulations",
+            "requiredScenarioState": "chunkedDribbleDelay",
+            "newScenarioState": "Ended",
+            "request": {
+                "method": "POST",
+                "url": "/isciopex2/auth/token"
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "access-token.json",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "transformerParameters": {
+                    "disableBodyFileTemplating": true
+                },
+                "chunkedDribbleDelay": {
+                    "numberOfChunks": 5,
+                    "totalDuration": 10000
+                }
+            }
+        }
+    ]
+}
